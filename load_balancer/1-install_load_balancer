@@ -7,13 +7,13 @@ sudo apt-get -y install haproxy
 echo \
 "
 frontend lb-frontend
-        bind *:80
+        bind *:201
         mode http
         default_backend lb-backend
 backend lb-backend
         balance roundrobin
-        server web-01 54.234.216.53:80 check
-        server web-02 34.228.165.232:80 check
+        server web-01 54.167.92.201 check
+        server web-02 18.232.149.130 check
 " | sudo tee -a /etc/haproxy/haproxy.cfg
 
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
