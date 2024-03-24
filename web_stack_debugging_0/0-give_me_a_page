@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+<<<<<<< HEAD
+# Start Apache so as to return a
+# page conatining Hello Holberton
+service apache2 start
+=======
+#Fix curl error message by starting Apache server
+
+sudo service apache2 start
+>>>>>>> 8ebe133dd255a60e9cf4c28bcfd763801da26828
