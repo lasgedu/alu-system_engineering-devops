@@ -1,7 +1,6 @@
- server bug
-chmod 644 /etc/nginx/nginx.conf
-sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
-sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
+#!/usr/bin/env bash
+# Configure the container to run Nginx as the nginx user.
+sudo chmod -R 755 /etc/nginx/
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
 pkill apache2
-# restart
-su nginx -s /bin/bash -c 'service nginx restart'
+su nginx -c "service nginx restart"
